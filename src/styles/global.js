@@ -10,7 +10,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background-color: #993399 ;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: #808080 ;
     color: #00cc39;
   }
   body, input, button {
@@ -18,8 +21,6 @@ export default createGlobalStyle`
   }
   #root {
     max-width: 1020px;
-    margin: 0 auto;
-    padding: 0 20px 50px;
   }
   button {
     cursor: pointer;
