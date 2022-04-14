@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { CardGame, Conteudo, Footer } from './style'
+import { CardGame } from './style'
 import ajax from '../../services/api'
+
+//import cart from '../../assets/cart-icon.svg'
 
 const Card = props => {
   const [data, setData] = useState([])
@@ -10,7 +12,6 @@ const Card = props => {
   function getInfos() {
     if (isRequestOk()) {
       setData(JSON.parse(ajax.responseText))
-      //dataGames = data
       console.log(data)
     }
 
@@ -23,9 +24,14 @@ const Card = props => {
     <>
       {data.map(item => (
         <CardGame key={item.id}>
+          <h2>{item.name}</h2>
           <img src={require(`../../assets/${item.image}`)} alt={item.name} />
-          <Conteudo>{item.name}</Conteudo>
-          <Footer>{item.price}</Footer>
+          <h3>{item.price}</h3>
+          <h4>Quantidade:</h4>
+          <span>
+            <button>+</button>
+            <button>-</button>
+          </span>
         </CardGame>
       ))}
     </>
