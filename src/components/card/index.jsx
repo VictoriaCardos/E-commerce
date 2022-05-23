@@ -24,7 +24,7 @@ const Card = props => {
         <CardGame key={item.gameID}>
           <h2>{item.title}</h2>
           <img src={item.thumb} alt={item.title} />
-          <h3>{item.normalPrice}</h3>
+          <h3>R${item.normalPrice}</h3>
           <Counter />
         </CardGame>
       ))}
