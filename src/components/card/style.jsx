@@ -34,15 +34,6 @@ export const CardGame = styled.div`
     width: 3rem;
     height: 3rem;
   }
-  button {
-    background-color: #075c1f;
-    border: none;
-    border-radius: 5px;
-  }
-
-  span button {
-    width: 4rem;
-  }
 `
 export const Conteudo = styled.div`
   display: flex;
