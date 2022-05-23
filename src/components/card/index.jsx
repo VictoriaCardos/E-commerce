@@ -12,7 +12,6 @@ const Card = props => {
   function getInfos() {
     if (isRequestOk()) {
       setData(JSON.parse(ajax.responseText))
-      console.log(data)
     }
 
     function isRequestOk() {
