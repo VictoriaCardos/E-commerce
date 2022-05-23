@@ -25,7 +25,7 @@ const Card = props => {
       {data.map(item => (
         <CardGame key={item.gameID}>
           <h2>{item.title}</h2>
-
+          <img src={item.thumb} alt={item.title} />
           <h3>{item.normalPrice}</h3>
           <h4>Quantidade:</h4>
           <span>
