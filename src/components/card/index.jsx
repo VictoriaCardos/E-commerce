@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { CardGame } from './style'
 import ajax from '../../services/api'
-
-//import cart from '../../assets/cart-icon.svg'
+import Counter from '../counter'
 
 const Card = props => {
   const [data, setData] = useState([])
@@ -26,11 +25,7 @@ const Card = props => {
           <h2>{item.title}</h2>
           <img src={item.thumb} alt={item.title} />
           <h3>{item.normalPrice}</h3>
-          <h4>Quantidade:</h4>
-          <span>
-            <button>+</button>
-            <button>-</button>
-          </span>
+          <Counter />
         </CardGame>
       ))}
     </>
