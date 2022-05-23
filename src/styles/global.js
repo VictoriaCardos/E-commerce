@@ -12,7 +12,7 @@ export default createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    
     background-color: #808080 ;
     color: #00cc39;
   }
