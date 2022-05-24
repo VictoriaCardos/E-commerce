@@ -8,7 +8,7 @@ const Counter = () => {
 
   function increment() {
     setCounter(count => count + 1)
-    if (counter == 0) {
+    if (counter === 0) {
       ctx.setTotal(ctx.total + 1)
     }
   }
@@ -17,7 +17,7 @@ const Counter = () => {
     if (counter > 0) {
       setCounter(count => count - 1)
     }
-    if (counter == 1) {
+    if (counter === 1) {
       ctx.setTotal(ctx.total - 1)
     }
   }
