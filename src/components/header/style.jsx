@@ -12,7 +12,22 @@ export const HeaderBox = styled.header`
     display: flex;
     width: 100%;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  h1 {
+    position: absolute;
+  }
+
+  .carrinho {
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-content: flex-end;
+    align-items: center;
+    right: 30rem;
+    position: absolute;
   }
 `
