@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { HeaderBox } from './style'
 import { context } from '../../context/index'
+import carrinho from '../../assets/cart-test.svg'
 
 const Header = props => {
   const ctx = useContext(context)
@@ -8,7 +9,12 @@ const Header = props => {
     <HeaderBox>
       <div>
         <h1>Games-E</h1>
-        <h4>Itens: {ctx.total}</h4>
+        <div className="carrinho">
+          <span>
+            <img src={carrinho} alt="Cart" />
+          </span>
+          Itens: {ctx.total}
+        </div>
       </div>
     </HeaderBox>
   )
