@@ -12,6 +12,7 @@ export default createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     
     background-color: #808080 ;
     color: #00cc39;
@@ -19,9 +20,7 @@ export default createGlobalStyle`
   body, input, button {
     font: 14px Roboto, sans-serif;
   }
-  #root {
-    max-width: 1020px;
-  }
+  
   button {
     cursor: pointer;
   }
