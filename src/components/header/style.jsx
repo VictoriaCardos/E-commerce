@@ -6,7 +6,8 @@ export const HeaderBox = styled.header`
   align-items: center;
   width: 100%;
   height: 4rem;
-  background-color: #2c2c2c;
+  background: #31393c;
+  border-bottom: 2px solid;
 
   div {
     display: flex;
@@ -29,5 +30,9 @@ export const HeaderBox = styled.header`
     align-items: center;
     right: 30rem;
     position: absolute;
+  }
+
+  img {
+    width: 2.4rem;
   }
 `
