@@ -28,7 +28,8 @@ export const CardGame = styled.div`
   order: 0;
   width: 300px;
   margin-top: 5.5rem;
-  margin-left: auto;
+  margin-left: 3rem;
+  margin-right: 3rem;
 
   button img {
     width: 3rem;
