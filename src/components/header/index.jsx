@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { HeaderBox } from './style'
 import Modal from 'react-modal'
+import Counter from '../counter'
 import { context } from '../../context/index'
 
 import carrinho from '../../assets/cart2.svg'
@@ -43,7 +44,10 @@ const Header = () => {
         <h3>Produtos selecionados por você:</h3>
         <ul>
           {ctx.name.map(item => (
-            <li key={Math.random(100)}>{item}</li>
+            <>
+              <li key={Math.random(100)}>{item}</li>
+              <Counter />
+            </>
           ))}
         </ul>
 
