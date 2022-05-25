@@ -1,31 +1,19 @@
-import React, { useState, useContext } from 'react'
-import { context } from '../../context/index'
+import React, { useState } from 'react'
 import { Content } from './style'
 
 import addButton from '../../assets/add3.svg'
 import removeButton from '../../assets/remove2.svg'
 
 const Counter = props => {
-  const ctx = useContext(context)
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(1)
 
   function increment() {
     setCounter(count => count + 1)
-    if (counter === 0) {
-      const gameCopy = Array.from(ctx.name)
-      ctx.setTotal(ctx.total + 1)
-      gameCopy.push(props.nameOfGame)
-      ctx.setName(gameCopy)
-      console.log(ctx.name)
-    }
   }
 
   function decrement() {
     if (counter > 0) {
       setCounter(count => count - 1)
-    }
-    if (counter === 1) {
-      ctx.setTotal(ctx.total - 1)
     }
   }
 
