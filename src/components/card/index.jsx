@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CardGame } from './style'
 import ajax from '../../services/api'
-import Counter from '../counter'
+import KartContent from '../kartContent'
 
 const Card = props => {
   const [data, setData] = useState([])
@@ -25,7 +25,7 @@ const Card = props => {
           <img src={item.thumb} alt={item.title} />
           <h2>{item.title}</h2>
           <h3>R${item.normalPrice}</h3>
-          <Counter nameOfGame={item.title} />
+          <KartContent nameOfGame={item.title} />
         </CardGame>
       ))}
     </>
