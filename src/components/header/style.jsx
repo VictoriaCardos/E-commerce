@@ -35,4 +35,9 @@ export const HeaderBox = styled.header`
   img {
     width: 2.4rem;
   }
+
+  button {
+    background: transparent;
+    border: none;
+  }
 `
