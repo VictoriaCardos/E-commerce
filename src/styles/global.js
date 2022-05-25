@@ -42,7 +42,7 @@ export default createGlobalStyle`
   border: 2px solid;
   width: 100%;
   max-width: 576px;
-  background: var(--background);
+  background: #31393c;
   padding: 3rem;
   position: relative;
   border-radius: 0.25rem;
