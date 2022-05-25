@@ -55,8 +55,7 @@ const Header = () => {
           Fechar
         </button>
         <div className="optionsButtons">
-          <button>Sim!</button>
-          <button onClick={closeModal}>Não!</button>
+          <button onClick={closeModal}>Continue comprando!</button>
         </div>
       </Modal>
     </>
