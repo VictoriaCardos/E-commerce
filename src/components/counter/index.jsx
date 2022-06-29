@@ -14,15 +14,14 @@ const Counter = props => {
   }
 
   function decrement() {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(count => count - 1)
     }
-    if (counter <= 1) {
+    if (counter === 1) {
       ctx.setTotal(ctx.total - 1)
       var arrayNames = ctx.name
       var indice = arrayNames.indexOf(props.nameOfGame)
       arrayNames.splice(indice, 1)
-      console.log(arrayNames)
     }
   }
 
