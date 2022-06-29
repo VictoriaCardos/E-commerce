@@ -14,18 +14,21 @@ const KartContent = props => {
       gameCopy.push(props.nameOfGame)
       ctx.setName(gameCopy)
       ctx.setTotal(ctx.total + 1)
-      setGame(count => count + 1)
+      setGame(game + 1)
     }
+    console.log(game, ctx.name)
   }
 
   function removeToCart() {
     if (game === 1) {
-      setGame(count => count - 1)
-      ctx.setTotal(ctx.total - 1)
-      var arrayNames = ctx.name
+      const gameCopy = Array.from(ctx.name)
+      var arrayNames = gameCopy
       var indice = arrayNames.indexOf(props.nameOfGame)
-      arrayNames.splice(indice, 1)
-      console.log(arrayNames)
+      if (indice !== -1) {
+        arrayNames.splice(indice, 1)
+        setGame(game - 1)
+        ctx.setTotal(ctx.total - 1)
+      }
     }
   }
 
