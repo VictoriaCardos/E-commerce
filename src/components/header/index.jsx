@@ -46,7 +46,7 @@ const Header = () => {
           {ctx.name.map(item => (
             <>
               <li key={Math.random(100)}>{item}</li>
-              <Counter />
+              <Counter nameOfGame={item} />
             </>
           ))}
         </ul>
