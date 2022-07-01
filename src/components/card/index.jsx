@@ -17,6 +17,13 @@ const Card = props => {
       return ajax.readyState === 4 && ajax.status === 200
     }
   }
+  function formattedAmount(item) {
+    item = item.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+    return item
+  }
 
   return (
     <>
@@ -24,7 +31,7 @@ const Card = props => {
         <CardGame key={item.gameID}>
           <img src={item.thumb} alt={item.title} />
           <h2>{item.title}</h2>
-          <h3>R${item.normalPrice}</h3>
+          <h3>{formattedAmount(Number(item.normalPrice))}</h3>
           <KartContent nameOfGame={item.title} />
         </CardGame>
       ))}
