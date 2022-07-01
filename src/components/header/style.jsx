@@ -32,6 +32,16 @@ export const HeaderBox = styled.header`
     position: absolute;
   }
 
+  .subtotal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: center;
+    right: 13rem;
+    position: absolute;
+  }
+
   img {
     width: 2.4rem;
   }
