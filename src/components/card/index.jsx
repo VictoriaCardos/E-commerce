@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { CardGame } from './style'
 import ajax from '../../services/api'
 import KartContent from '../kartContent'
+import { context } from '../../context/index'
 
 const Card = props => {
-  const [data, setData] = useState([])
+  const ctx = useContext(context)
 
   ajax.addEventListener('readystatechange', getInfos, true)
 
   function getInfos() {
     if (isRequestOk()) {
-      setData(JSON.parse(ajax.responseText))
+      ctx.setData(JSON.parse(ajax.responseText))
     }
 
     function isRequestOk() {
@@ -27,12 +28,15 @@ const Card = props => {
 
   return (
     <>
-      {data.map(item => (
+      {ctx.data.map(item => (
         <CardGame key={item.gameID}>
           <img src={item.thumb} alt={item.title} />
           <h2>{item.title}</h2>
           <h3>{formattedAmount(Number(item.normalPrice))}</h3>
-          <KartContent nameOfGame={item.title} />
+          <KartContent
+            priceOfGame={Number(item.normalPrice)}
+            nameOfGame={item.title}
+          />
         </CardGame>
       ))}
     </>
