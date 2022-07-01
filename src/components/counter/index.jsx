@@ -22,7 +22,19 @@ const Counter = props => {
       var arrayNames = ctx.name
       var indice = arrayNames.indexOf(props.nameOfGame)
       arrayNames.splice(indice, 1)
+      subtotalSubtraction()
     }
+  }
+
+  function subtotalSubtraction() {
+    const name = props.nameOfGame
+    ctx.data.map(item => {
+      if (item.title === name) {
+        console.log(item)
+        var price = item.normalPrice
+        ctx.setSubtotal(ctx.subtotal - Number(price))
+      }
+    })
   }
 
   return (
