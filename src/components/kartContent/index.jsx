@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { context } from '../../context/index'
 import { Content } from './style'
 import addCart from '../../assets/addCart.svg'
@@ -6,7 +6,6 @@ import removeCart from '../../assets/removeCart2.svg'
 
 const KartContent = props => {
   const ctx = useContext(context)
-  const [game, setGame] = useState(0)
 
   function addToCart() {
     var arrayNames = ctx.name
@@ -16,21 +15,16 @@ const KartContent = props => {
       gameCopy.push(props.nameOfGame)
       ctx.setName(gameCopy)
       ctx.setTotal(ctx.total + 1)
-      setGame(count => count + 1)
     }
   }
 
   function removeToCart() {
-    if (game === 1) {
-      setGame(count => count - 1)
-      var arrayNames = ctx.name
-      var indice = arrayNames.indexOf(props.nameOfGame)
+    var arrayNames = ctx.name
+    var indice = arrayNames.indexOf(props.nameOfGame)
 
-      if (indice !== -1) {
-        arrayNames.splice(indice, 1)
-        setGame(count => count - 1)
-        ctx.setTotal(ctx.total - 1)
-      }
+    if (indice !== -1) {
+      arrayNames.splice(indice, 1)
+      ctx.setTotal(ctx.total - 1)
     }
   }
 
