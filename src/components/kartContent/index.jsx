@@ -9,24 +9,23 @@ const KartContent = props => {
   const [game, setGame] = useState(0)
 
   function addToCart() {
-    if (game === 0) {
+    var arrayNames = ctx.name
+    var indice = arrayNames.indexOf(props.nameOfGame)
+    if (indice === -1) {
       const gameCopy = Array.from(ctx.name)
       gameCopy.push(props.nameOfGame)
       ctx.setName(gameCopy)
       ctx.setTotal(ctx.total + 1)
       setGame(count => count + 1)
-      console.log(game, ctx.name, gameCopy)
     }
   }
 
   function removeToCart() {
     if (game === 1) {
       setGame(count => count - 1)
-
       var arrayNames = ctx.name
       var indice = arrayNames.indexOf(props.nameOfGame)
 
-      console.log(indice, game)
       if (indice !== -1) {
         arrayNames.splice(indice, 1)
         setGame(count => count - 1)
