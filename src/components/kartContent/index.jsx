@@ -15,17 +15,26 @@ const KartContent = props => {
       gameCopy.push(props.nameOfGame)
       ctx.setName(gameCopy)
       ctx.setTotal(ctx.total + 1)
+      subtotalSum()
     }
   }
 
   function removeToCart() {
     var arrayNames = ctx.name
     var indice = arrayNames.indexOf(props.nameOfGame)
-
     if (indice !== -1) {
       arrayNames.splice(indice, 1)
       ctx.setTotal(ctx.total - 1)
+      subtotalSubtraction()
     }
+  }
+
+  function subtotalSum() {
+    ctx.setSubtotal(ctx.subtotal + props.priceOfGame)
+  }
+
+  function subtotalSubtraction() {
+    ctx.setSubtotal(ctx.subtotal - props.priceOfGame)
   }
 
   return (
