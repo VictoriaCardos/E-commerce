@@ -18,6 +18,17 @@ const Header = () => {
     setIsOpen(false)
   }
 
+  function formattedAmount(item) {
+    item = item.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+    if (item === '-R$ 0,00') {
+      item = 'R$ 0,00'
+    }
+    return item
+  }
+
   return (
     <>
       <HeaderBox>
@@ -30,6 +41,9 @@ const Header = () => {
               </button>
             </span>
             Itens: {ctx.total}
+          </div>
+          <div className="subtotal">
+            Subtotal: {formattedAmount(ctx.subtotal)}
           </div>
         </div>
       </HeaderBox>
