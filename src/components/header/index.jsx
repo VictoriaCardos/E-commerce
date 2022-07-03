@@ -12,6 +12,7 @@ const Header = () => {
 
   function openModal() {
     setIsOpen(true)
+    ctx.setNameCounter(ctx.subtotal)
   }
 
   function closeModal() {
@@ -23,8 +24,8 @@ const Header = () => {
       style: 'currency',
       currency: 'BRL'
     })
-    if (item === '-R$ 0,00') {
-      item = 'R$ 0,00'
+    if (item === '-R$ 0,00' || item === 'R$ 0,00') {
+      item = 'Selecione um jogo!'
     }
     return item
   }
@@ -58,12 +59,13 @@ const Header = () => {
         <h3>Produtos selecionados por você:</h3>
         <ul>
           {ctx.name.map(item => (
-            <>
-              <li key={Math.random(100)}>{item}</li>
+            <div key={item}>
+              <li>{item}</li>
               <Counter nameOfGame={item} />
-            </>
+            </div>
           ))}
         </ul>
+        <h3>Total: {formattedAmount(ctx.nameCounter)}</h3>
 
         <button className="react-modal-close" onClick={closeModal}>
           Fechar
