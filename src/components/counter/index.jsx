@@ -11,11 +11,13 @@ const Counter = props => {
 
   function increment() {
     setCounter(count => count + 1)
+    totalSum()
   }
 
   function decrement() {
     if (counter > 1) {
       setCounter(count => count - 1)
+      totalSubtraction()
     }
     if (counter === 1) {
       ctx.setTotal(ctx.total - 1)
@@ -23,6 +25,7 @@ const Counter = props => {
       var indice = arrayNames.indexOf(props.nameOfGame)
       arrayNames.splice(indice, 1)
       subtotalSubtraction()
+      totalSubtraction()
     }
   }
 
@@ -30,9 +33,29 @@ const Counter = props => {
     const name = props.nameOfGame
     ctx.data.map(item => {
       if (item.title === name) {
-        console.log(item)
         var price = item.normalPrice
         ctx.setSubtotal(ctx.subtotal - Number(price))
+      }
+    })
+  }
+  function totalSum() {
+    const name = props.nameOfGame
+    ctx.data.map(item => {
+      if (item.title === name) {
+        var price = item.normalPrice
+        var mult = price * counter
+        ctx.setNameCounter(ctx.nameCounter + mult)
+        console.log(ctx.nameCounter)
+      }
+    })
+  }
+
+  function totalSubtraction() {
+    const name = props.nameOfGame
+    ctx.data.map(item => {
+      if (item.title === name) {
+        var price = item.normalPrice
+        ctx.setNameCounter(ctx.nameCounter - price)
       }
     })
   }
