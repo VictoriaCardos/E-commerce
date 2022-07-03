@@ -7,7 +7,7 @@ export const ContextProvider = props => {
   const [total, setTotal] = useState(0)
   const [name, setName] = useState([])
   const [subtotal, setSubtotal] = useState(0)
-
+  const [nameCounter, setNameCounter] = useState(0)
   return (
     <context.Provider
       value={{
@@ -15,10 +15,12 @@ export const ContextProvider = props => {
         total,
         name,
         subtotal,
+        nameCounter,
         setData,
         setTotal,
         setName,
-        setSubtotal
+        setSubtotal,
+        setNameCounter
       }}
     >
       {props.children}
