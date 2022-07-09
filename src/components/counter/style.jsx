@@ -12,14 +12,18 @@ export const Content = styled.div`
   }
 
   button img {
-    width: 2rem;
+    width: 1.5rem;
+  }
+
+  .trash {
+    width: 2.5rem;
   }
 
   span button {
-    width: 4rem;
+    width: 2.5rem;
   }
 
   h4 {
-    margin-top: 1.5rem;
+    margin-top: 0.6rem;
   }
 `
