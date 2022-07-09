@@ -5,6 +5,7 @@ import Counter from '../counter'
 import { context } from '../../context/index'
 
 import carrinho from '../../assets/cart2.svg'
+import close from '../../assets/close.svg'
 
 const Header = () => {
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -34,7 +35,7 @@ const Header = () => {
     <>
       <HeaderBox>
         <div>
-          <h1>Games-E</h1>
+          <h1>E-Games</h1>
           <div className="carrinho">
             <span>
               <button onClick={openModal}>
@@ -57,18 +58,18 @@ const Header = () => {
         contentLabel="Example Modal"
       >
         <h3>Produtos selecionados por você:</h3>
-        <ul>
+        <ul className="cartContent">
           {ctx.name.map(item => (
-            <div key={item}>
-              <li>{item}</li>
+            <span className="product" key={item}>
+              <li className="listGame">{item}</li>
               <Counter nameOfGame={item} />
-            </div>
+            </span>
           ))}
         </ul>
         <h3>Total: {formattedAmount(ctx.nameCounter)}</h3>
 
         <button className="react-modal-close" onClick={closeModal}>
-          Fechar
+          <img className="close" src={close} alt="Cart" />
         </button>
         <div className="optionsButtons">
           <button onClick={closeModal}>Continue comprando!</button>
