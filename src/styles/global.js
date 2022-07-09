@@ -25,6 +25,10 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+  
+  ul {
+    list-style-type: none;
+  }
 
   .react-modal-overlay {
   background: transparent;
@@ -62,4 +66,21 @@ export default createGlobalStyle`
     filter: brightness(0.8);
   }
 }
+
+.product {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cartContent {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .close {
+    width: 2rem;
+  }
 `
