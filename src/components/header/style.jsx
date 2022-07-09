@@ -50,4 +50,8 @@ export const HeaderBox = styled.header`
     background: transparent;
     border: none;
   }
+  .listGame {
+    list-style: none;
+    list-style-type: none;
+  }
 `
