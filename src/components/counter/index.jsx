@@ -4,6 +4,7 @@ import { context } from '../../context/index'
 
 import addButton from '../../assets/add3.svg'
 import removeButton from '../../assets/remove2.svg'
+import trash from '../../assets/trash.svg'
 
 const Counter = props => {
   const [counter, setCounter] = useState(1)
@@ -29,6 +30,25 @@ const Counter = props => {
     }
   }
 
+  function removeGame() {
+    setCounter(counter - counter)
+    ctx.setTotal(ctx.total - 1)
+    var arrayNames = ctx.name
+
+    subtotalSubtraction()
+
+    var indice = arrayNames.indexOf(props.nameOfGame)
+    arrayNames.splice(indice, 1)
+    const name = props.nameOfGame
+    ctx.data.map(item => {
+      if (item.title === name) {
+        var price = item.normalPrice
+        var mult = price * counter
+        ctx.setNameCounter(ctx.nameCounter - mult)
+      }
+    })
+  }
+
   function subtotalSubtraction() {
     const name = props.nameOfGame
     ctx.data.map(item => {
@@ -45,7 +65,6 @@ const Counter = props => {
         var price = item.normalPrice
         var mult = price * counter
         ctx.setNameCounter(ctx.nameCounter + mult)
-        console.log(ctx.nameCounter)
       }
     })
   }
@@ -68,7 +87,10 @@ const Counter = props => {
         </button>
         <h4>{counter}</h4>
         <button onClick={decrement}>
-          <img src={removeButton} alt="Remove game" />
+          <img src={removeButton} alt="Decrement game" />
+        </button>
+        <button onClick={removeGame}>
+          <img className="trash" src={trash} alt="Remove game" />
         </button>
       </span>
     </Content>
