@@ -83,4 +83,20 @@ export default createGlobalStyle`
   .close {
     width: 2rem;
   }
+
+  .buttonKeepBuy {
+    background: #ff7a00;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+    color: #31393c;
+    
+
+    &:hover {
+    background: #e26f04ca;
+    transition-duration: 1s;
+    
+  }
+  }
 `
