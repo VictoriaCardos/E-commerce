@@ -74,7 +74,9 @@ const Header = () => {
           <img className="close" src={close} alt="Cart" />
         </button>
         <div className="optionsButtons">
-          <button onClick={closeModal}>Continue comprando!</button>
+          <button className="buttonKeepBuy" onClick={closeModal}>
+            Continue comprando!
+          </button>
         </div>
       </Modal>
       <ToastContainer
