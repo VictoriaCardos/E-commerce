@@ -19,7 +19,7 @@ const KartContent = props => {
       ctx.setTotal(ctx.total + 1)
       subtotalSum()
     } else {
-      toast.error(`${props.nameOfGame} já foi adicionado!`)
+      toast.info(`${props.nameOfGame} já foi adicionado!`)
     }
   }
 
@@ -31,7 +31,7 @@ const KartContent = props => {
       ctx.setTotal(ctx.total - 1)
       subtotalSubtraction()
     } else {
-      toast.error(`${props.nameOfGame} não está no seu carrinho!`)
+      toast.warn(`${props.nameOfGame} não está no seu carrinho!`)
     }
   }
 
@@ -43,7 +43,7 @@ const KartContent = props => {
   function subtotalSubtraction() {
     ctx.setSubtotal(ctx.subtotal - props.priceOfGame)
 
-    toast.info(`${props.nameOfGame} foi removido do carrinho!`)
+    toast.error(`${props.nameOfGame} foi removido do carrinho!`)
   }
 
   return (
