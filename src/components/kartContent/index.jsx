@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { context } from '../../context/index'
 import { Content } from './style'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import addCart from '../../assets/addCart.svg'
 import removeCart from '../../assets/removeCart2.svg'
 
@@ -16,6 +18,8 @@ const KartContent = props => {
       ctx.setName(gameCopy)
       ctx.setTotal(ctx.total + 1)
       subtotalSum()
+    } else {
+      toast.error(`${props.nameOfGame} já foi adicionado!`)
     }
   }
 
@@ -26,15 +30,20 @@ const KartContent = props => {
       arrayNames.splice(indice, 1)
       ctx.setTotal(ctx.total - 1)
       subtotalSubtraction()
+    } else {
+      toast.error(`${props.nameOfGame} não está no seu carrinho!`)
     }
   }
 
   function subtotalSum() {
     ctx.setSubtotal(ctx.subtotal + props.priceOfGame)
+    toast.success(`${props.nameOfGame} foi adicionado ao carrinho!`)
   }
 
   function subtotalSubtraction() {
     ctx.setSubtotal(ctx.subtotal - props.priceOfGame)
+
+    toast.info(`${props.nameOfGame} foi removido do carrinho!`)
   }
 
   return (
