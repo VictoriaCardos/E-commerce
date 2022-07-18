@@ -3,6 +3,8 @@ import { HeaderBox } from './style'
 import Modal from 'react-modal'
 import Counter from '../counter'
 import { context } from '../../context/index'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import carrinho from '../../assets/cart2.svg'
 import close from '../../assets/close.svg'
@@ -75,6 +77,17 @@ const Header = () => {
           <button onClick={closeModal}>Continue comprando!</button>
         </div>
       </Modal>
+      <ToastContainer
+        position="top-left"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   )
 }
